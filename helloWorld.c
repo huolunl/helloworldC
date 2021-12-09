@@ -1,14 +1,7 @@
 #include <stdio.h>
-
-main() //程序入口
-{
-//    f();
-//    funcFor();
-//    funcChar();
-funcArray();
-}
-
-f()
+//
+// 函数声明需要提前
+void f()
 {
     int fahr, celsius; // 声明int变量 16位整型
     int lower, upper,step;
@@ -29,25 +22,25 @@ f()
     }
 }
 
-funcFor()
+void funcFor()
 {
     int fahr;
     for (fahr = 0; fahr <= 300; fahr = fahr + 20)   // for 循环后面没用大括号
         printf("%3d %6.1f\n",fahr,(5.0/9.0)*(fahr - 32));
 }
 
-funcChar()
+void funcChar()
 {
     int c; // int类型可以保存char类型数据
     putchar(EOF); // 打印字符 EOF 相当于mac上的control + d
-    putchar('AA'); // 只会打印一个A
-    printf("%d",'AA'); // 单引号表示字符常量， 值为对应的编码值
+    putchar('A'); // 只会打印一个A
+    printf("%d",'A'); // 单引号表示字符常量， 值为对应的编码值
     while ((c = getchar()) != EOF) { //getchar接收来自键盘的输入
         putchar(c);
     }
 }
 
-funcArray()
+void funcArray()
 {
     int c, i, nwhite, nother;
     int ndigit[10]; //数组声明  长度为10
@@ -70,4 +63,13 @@ funcArray()
         printf(",white space = %d, other = %d\n",nwhite,nother);
     }
 }
+int main() //程序入口
+{
+//    f();
+//    funcFor();
+//    funcChar();
+funcArray();
+}
+
+
 
