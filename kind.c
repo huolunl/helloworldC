@@ -30,8 +30,28 @@ void funcConst()
 	const int c = 10;
 }
 
+// 存储类 定义作用域
+extern int f = 1; // extern 定义一个引用， 也就是e保存的是指针
+void funccon()
+{
+	int a = 1;
+	auto int b =1; //默认存储类 auto， 和不写意义相同
+
+	register int c = 1; // 直接存储到寄存器里，而不是内存里，不能取内存地址
+	f ++;
+
+	static int d = 1;  // 不需要每次进入离开作用域时销毁
+	printf("%d",d);   // 第二次会输出2， 不会重置d
+	printf("%d",f);   // 第二次会输出2，因为f保存的是指针
+
+	d ++;
+}
+
+
 int main()
 {
-	// funcVerb();
-	funcConst();
+	funccon();
+	funccon();
 }
+
+
